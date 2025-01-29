@@ -1,0 +1,11 @@
+HTML: Hyper Text Markup Language
+HTML: Responsible for creating the structure of the page.
+CSS : Responsible for the styling and formatting the HTML elements.
+Javascript: Responsible for adding Functionality to the HTML elements.
+
+Websites that help
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+
+create (.html) file, right click and "Open with Live Server"
