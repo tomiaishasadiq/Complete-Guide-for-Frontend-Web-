@@ -1,11 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!-- Structure of an html document--> 
+<!DOCTYPE html> <!-- tell browser what kind of document it is. -->
+<html lang="en"> <!-- html tag; represent the Root of an html document, container for all Html elements. -->
+<head> <!-- contain metadata: document title,character set, files, links  etc. to specify metadata to provide to the browser. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My HTML Page</title>
+    <title>My HTML Page</title> <!--visible on the browser tab -->
 </head>
-<body>
-    <p>Welcome to this Page</p>
+
+<body> <!-- content of the document -->
+
+    <!-- HTML Headings -->
+    <h1>I am a H1 heading.</h1> <!-- Recommended to have only one H1 heading on a page. -->
+    <h2>I am a H2 heading.</h2>
+    <h3>I am a H3 heading.</h3>
+    <h4>I am a H4 heading.</h4>
+    <h5>I am a H5 heading.</h5>
+    <h6>I am a H6 heading.</h6>
+
+    <!-- HTML Paragraph -->
+    <pre><p style = "font-size: 23px; padding: 16px; line-height: 1.5;"><b>Technology has revolutionized the way we live </b> and interact with the world around us. 
+From advancements in communication tools like smartphones to the rise of automation in industries, 
+        the impact of technology is undeniable.</br> While it has undoubtedly brought numerous benefits, 
+        such as enhancing productivity and connecting people across the globe, it also comes with its challenges, 
+        including concerns about privacy and the digital divide. As we continue to innovate, it's crucial to 
+        balance the advantages of technological progress with the responsibility of addressing its potential
+        risks. Ultimately, technology has the power to shape the future,
+        but we must ensure it is used in a way that benefits society as a whole.</p></pre>
+
+
+    <!-- HTML Embed Image -->  
+     <!--img tag Requires two attributes src(location of image) and alt(description of image)-->  
+     <img src = "data:image/jpeg;base64,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" 
+          alt = "HBD lewis "
+          width="300"
+          height="200"/>
+     <img src = "assets/lew.jpeg" 
+          alt = "HBD lewis "
+          width="300"
+          height="200"/>
+    
+    <!-- HTML Ordered and Unordered Lists --> 
+     <h3 style="padding-left: 16px;">Planets in the Solar System</h3>
+     <ol type = "a" >
+        <li>Mecury</li>
+        <li>Venus</li>
+        <li>Earth</li>
+        <li>Mars</li>
+        <li>Jupiter</li>
+        <li>Saturn</li>
+        <li>Uranus</li>
+        <li>Pluto</li>
+     </ol>
+
+     <ul style = "list-style-type: square;">
+        <li>Mecury</li>
+        <li>Venus</li>
+        <li>Earth</li>
+        <li>Mars</li>
+        <li>Jupiter</li>
+        <li>Saturn</li>
+        <li>Uranus</li>
+        <li>Pluto</li>
+     </ul>
+
+     <!-- HTML Block and Inline Elements --> 
+      <!--Block element used as a container for other html elements, can wrap headings and paragraph into a div.-->
+      <div style="background-color: beige;">
+            <h1>I am a H1 heading.</h1>
+            <p>This will upload your GitLab project to GitHub. If you were working on a branch other than master, replace master with the appropriate branch name.</p>
+      </div>
+
+      <!--Span is an inline element that has multiple elements in one line-->
+      <span>Home</span>
+      <span>About</span>
+      <span>Profile</span>
+      <span>Contact</span>
+
+      <!--HTML Adding HyperLinks in Webpages-->
+      <a href="https://www.virginmedia.ie/" target="blank">Virgin Media</a>
+
+      <!--Image Link-->
+      <a href="https://www.virginmedia.ie/" target="blank">
+        <img src="/assets/lew.jpeg" alt = "lewis pullman" width="200px" height="200px"/>
+      </a>
+
+       <!--HTML using links to connect Webpages-->
+       <ul style = "list-style-type: none">
+        <li><a href = "/class.html">Home</a></li>
+        <li><a href ="/index.html">Contact</a></li>
+        </ul>
+      
+      
+
 </body>
+
 </html>
