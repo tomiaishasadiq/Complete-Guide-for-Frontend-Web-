@@ -1,0 +1,164 @@
+HTML: Hyper Text Markup Language
+HTML: Responsible for creating the structure of the page.
+CSS : Responsible for the styling and formatting the HTML elements.
+Javascript: Responsible for adding Functionality to the HTML elements.
+
+Websites that help
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+
+create (.html) file, right click and "Open with Live Server"
+Right click and inspect.
+
+Structure of an html document: index.html
+What is an html tag: combination of characters enclosed in angled brackets <> </>, each tag having a different purpose.
+
+Html Headings: 6 different types h1 (most important) - h6 (least important)
+
+Html Paragraphs: <b> bold </b>  <i> italics </> 
+break a line/different line for a word/sentence: two options
+ - breakline </br>
+ - format <pre> </pre>, wrap paragraph with pre tag, sensitive to the tab!
+
+
+HTML Embed Image: does not need closing tag; <img />
+img tag Requires two attributes src(location of image) and alt(description of image) 
+
+
+HTML Ordered and Unordered Lists
+List Item: <li></li>
+Ordered: sequence ( abc OR 123 ) <ol></ol>
+Ordered List; has attribute "type" used to change sequence style.
+Unordered: bullet Points  <ul></ul>
+css has style attribute; <ul style = "list-style-type: square;">
+
+
+Adding styles and Formatting elements
+style attribute added into  tag.
+margin: space outside our element/box (outside border/padding).
+margin: 16px // 16px all over, top, bottom, right and left.
+margin-top //above box
+margin-bottom //below box
+margin-left  //left of the box
+margin-right  //right of the box
+text-align: center //heading in center of screen
+padding //for paragraph, space outside the content
+padding alone is for all sides.
+padding top, bottom,left, right.
+line-height // space between the lines.
+
+
+HTML Block and Inline Elements
+Block: start on a new line (div)
+Block element used as a container for other html elements, can wrap headings and paragraph into a div.
+
+inLine: do not start on a new line.
+Span is an inline element that has multiple elements in one line
+
+
+HTML Class Attributes
+html elements that have the class will be affected.
+
+HTML Adding HyperLinks in Webpages
+This link could be a text, image or any other html element.
+anchor tag: <a><a/>, attribute href describes where the user needs to be redirected. <a href=""></a>
+open in a new tab using "target" attribute; target="blank"
+
+
+HTML Uniquely Identifying HTML elements by using ID attribute
+attribute id is used.
+in head tag on html page, style tag: for class . is  used AND for id # is used.
+id can be used to bookmark:  <li><a href ="/index.html#first-section">Contact</a></li>; first-section here is id name in the div element.
+
+What makes HTML5 better?
+- Introduced semantic elements, these elements provide meaning to both the browser and search engines like google and bing.
+- Html page layout: browser will know which part og the webpage is a header, footer, nav etc
+- It has inbuilt support for audio and video files.
+- It has inbuilt support for vector graphics like SVG and Canvas.
+- It supports multiple storage options like Application Cache, SQL Database and Web Storage.
+- It has JS web worker API which allows JS and browser interface to run on different threads.
+
+HTML - Design Page Structure Using Semantic Elements
+These elements define structure as well as give meaing to the content of the HTML page.
+Help browsers to understand the kind of data being rendered like which part is for navigation, main content, foter etc
+
+Detail and Sumary Semantic tag
+Detail Tag; can be used to create an interactive widget that the user can open and close  by clicking on it.
+Detail; content of detail element is hidden by default.
+Summary; visible
+
+
+HTML Table
+td: table data
+th: table header tags
+caption: comes after table tag, used to name table.
+tr: rows
+
+Span table and rows; how to strech table cells aross rows and columns (HORIZONATLLY), html provides property "colspan" which defines how many columns should a cell stretch.
+(VERTICALLY) ==> rowspan
+
+HTML Form
+- form element
+- used for login etc
+input has no closing tag, has the type attribute: text, password etc, name attribute acts as the key.
+when selected the value(attribute) would be sent to the backend.
+
+Form Methods; using the attribute "method"
+Datalist element; combination of autocomplete and dropdown
+input type(s)/ type = " __": 
+- reset(to reset, go back to default/empty),
+- date(can have min(2025) and max(1950)),
+- file(useful for file uploads(file explorer))
+
+Attributes: These provide additional information about an element.
+- placeholder:" "
+- autofocus
+- multiple (select more than one value ) hold on to ctrl then click to select multiple.
+
+Form Validation
+certain type of value should be entered by the user.
+attribute:
+- required
+- maxLength = " "
+- min = "" and max = ""
+
+
+To align in center using margin-left and right: auto , fixed width is needed eg widith = 800px
+
+HTML- Videos
+  <video controls autoplay>//controls used for playback, autoplay:video to play automatically
+        <source src=" " type="video/mp4 ">
+    </video>
+
+Embed tagsPlay video & audio fight formats which are not supported by HTML5.
+<embed src = ""> tag
+
+Youtube videos in our webpage
+<iframe> tag
+
+SVG stands for Scalar Vector Graphics; markup lang for describinh two dimensional based vector graphics.
+<svg> element is used; its a container for SVG graphics;
+ it defines a new coordinate system to design theses graphics.
+ 
+ <!-- 
+
+
+ x1 = Starting X position(left to right)  
+ y1 = Starting Y position (top to bottom)  
+ x2 = Ending X position  
+ y2 = Ending Y position  
+
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <line x1="10" y1="10" x2="150" y2="100" stroke="black" stroke-width="2" />
+</svg>
+
+ This draws a **line** from `(10,10)` to `(150,100)` with a black stroke. 
+
+What does xmlns="http://www.w3.org/2000/svg" mean?
+It defines the XML namespace for an SVG document.
+
+Breaking it Down Simply:
+xmlns stands for XML Namespace.
+"http://www.w3.org/2000/svg" is the official namespace for SVG.
+It tells the browser: "Hey, this file contains SVG elements, not just regular XML or HTML. -->

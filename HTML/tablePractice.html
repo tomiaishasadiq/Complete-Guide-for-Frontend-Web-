@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table{
+            width: 700px;
+            /* background-color: lightpink; */
+            background-color: white;
+            margin-left: auto;
+            margin-right: auto ;
+         
+        }
+        table, td, th{
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size: 23px;
+        }
+        td, th{
+            padding: 16px;
+        }
+        .label{
+            font-weight: 900;
+        }
+        th {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+<body style = "background-color: lightblue";>
+    <table>
+        <tr>
+            <th colspan="3">Invoice #12345ABC</th>
+            <th>18th Jul 2019</th>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <span class="label">Pay To:</span><br>
+                The Tech Park<br>
+                15 Willow Lane<br>
+                Clane, Kildare
+            </td>
+            <td colspan="2">
+                <span class="label">Customer:</span><br>
+                Lewis Pullman<br>
+                Apartment 15<br>
+                67 Hill Reights<br>
+                Clane, Kildare
+            </td>
+        </tr>
+
+        <tr>
+            <th>Name/Description</th>
+            <th>Qty.</th>
+            <th>MRP</th>
+            <th>Amount</th>
+        </tr>
+
+        <tr>
+            <td>Rice Cake</td>
+            <td>4</td>
+            <td>500</td>
+            <td>2000</td>
+        </tr>
+
+        <tr>
+            <td>Vanilla Cake</td>
+            <td>2</td>
+            <td>500</td>
+            <td>1000</td>
+        </tr>
+
+        <tr>
+            <th colspan="3">Subtotal:</th>
+            <td colspan="1">3000</td>
+        </tr>
+
+        <tr>
+            <th colspan="2">Tax</th>
+            <td>10%</td>
+            <td>272</td>
+        </tr>
+
+        <tr>
+            <th colspan="3">Grand Total: </th>
+            <td>Rs 2727</td>
+        </tr>
+
+       
+    </table>
+</body>
+</html>

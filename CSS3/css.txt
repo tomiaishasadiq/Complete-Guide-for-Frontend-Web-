@@ -1,0 +1,28 @@
+code . ==> to open folder in vscode.
+start . ==> to open filder in file explorer
+cd .. ==> to go back/ outside current folder.
+
+CSS: Cascading Style Sheets
+HTML: Responsible for creating the structure of the page.
+CSS : Responsible for the styling and formatting the HTML elements.
+
+
+CSS Syntax
+p{----->Selector
+    //Declaration Block
+    font-size: 24px;
+    color: blue;
+}
+
+id value #
+class value .
+
+How to add CSS in HTML?
+- Inline CSS; adding a style property to the HTML element. using the style property (<p style = " "> </>).
+- Internal CSS; adding a style element inside the head of the html page. <head> <style>  </style></head>
+- External CSS; creating a new file index.css, need to link it to the html page using the link element
+ (<link href= "/index.css" rel = "stylesheet" type = "text/css") rel = relationship between html doc and 
+ the external file.
+
+Inline override Internal
+Internal override External
