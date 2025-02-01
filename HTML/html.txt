@@ -81,8 +81,9 @@ What makes HTML5 better?
 
 HTML - Design Page Structure Using Semantic Elements
 These elements define structure as well as give meaing to the content of the HTML page.
-Help browsers to understand the kind of data being rendered like which part is for navigation, main content, foter etc
-
+Help browsers to understand the kind of data being rendered like which part is for navigation, main content, footer etc
+  <!-- The main element contain the primary content of the web page. Lies between header and footer, direct descendant of body tag-->
+  
 Detail and Sumary Semantic tag
 Detail Tag; can be used to create an interactive widget that the user can open and close  by clicking on it.
 Detail; content of detail element is hidden by default.

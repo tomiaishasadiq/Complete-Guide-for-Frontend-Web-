@@ -1,6 +1,7 @@
 code . ==> to open folder in vscode.
 start . ==> to open filder in file explorer
 cd .. ==> to go back/ outside current folder.
+Right click and inspect.
 
 CSS: Cascading Style Sheets
 HTML: Responsible for creating the structure of the page.
@@ -24,5 +25,366 @@ How to add CSS in HTML?
  (<link href= "/index.css" rel = "stylesheet" type = "text/css") rel = relationship between html doc and 
  the external file.
 
+
+(Inline is the priority)
 Inline override Internal
-Internal override External
+Internal override External; 20px overides 48px on external CSS page
+
+CSS- Styling Text
+Text alignment; align text to either left right or center.(text-align: center/right/left/justify(meaning text is stretched all over available space))
+(font-style: )
+(font-weight: )
+(text-decoration: underline; OR overline; OR line-through; OR none;)
+(text-transform: ) UPPERCASE/lowercase/capitalize
+(letter-spacing: 2px)decrease or increase the space between alphabets.
+(word-spacing: 8px)increases the space between two words.
+(line-height: 1.5)increases the space between two lines lines.
+(font-family: ) google fonts, add link into head of html element, add css to the font-family.
+
+
+Adding Border;
+to define a border 3 values are needed.
+(border-style: dotted or dashed)
+(border-width: 6px)
+(border-color: red)
+(border-top/right/left/bottom-style: )
+Or use the shorthand property: (border: 4px solid blue) (border-left/bottom/right/top:  4px solid blue)
+(border-radius: 4px) for the corners to be curved/round
+
+
+Margin and Padding;
+Padding: to add space between border and and content. Space inside the element, pushing content inward.
+(padding: 16px;)
+Padding on different sides: (padding-top/right/bottom/left: 24px)//overides ordinary padding.
+Shorthand ==> padding: 16px(top) 20px(right)  28px(bottom) 24px(left); trbl(clockwise)
+    two values=> padding: 24px(top and bottom) 48px(left and right); 
+
+Margin: to add space outside the border. Space outside the element, pushing it away from others.
+(margin: 34px)
+Margin on different sides: (margin-top/right/bottom/left: 24px)
+Shorthand ==> margin: 26px(top) 40px(right)  32px(bottom) 24px(left); trbl(clockwise)
+    two values=> margin: 24px(top and bottom) 48px(left and right); 
+
+Use margin when you want to space out elements from each other.
+Use padding when you want to create space inside an element, around its content.
+
+Styling Lists
+CSS allows to change the list types.
+ordered lists(list-style-type: upper-alpha;)alphabetical order with uppercase
+unordered lists(list-style-type: square;)
+(list-style-position: inside)to get rid of indentation with markers(a/i/1) and the line below
+(list-style-type: none;)to get rid of markers
+
+Styling Links
+Different States
+1. Link: the state where link is not visited.
+2. Visited: the state when link is visited.
+3. Hover: the state when mouse hovered on  the link.
+4. Active: This is the state when the link is clicked.
+
+.classname:link{
+    color: blue;
+}
+.classname:visited{
+    color: green;
+}
+.classname:hover{
+    color:red;
+}
+.classname:active{
+    color: purple;
+}
+
+
+Styling Buttons
+#button-login {
+    background-color: lightblue;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;//hover 
+}
+#button-login: hover{
+    background-color: blue; //hover color
+    color: white;//font color
+}
+
+
+Not clickable button:
+#button-disabled{
+    background-color: lightblue;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;//hover
+
+    cursor: not-allowed;// not allowed to click.
+    opacity: 0.6;//accepts a value between 0 and 1, used to look faded.
+}
+
+
+Adding Icons
+can use font awesome or google's material items or image tags (<img src = " copy image address"/>, ).
+Font awesome: Google font awesome, sign in/up, confirm email, Copy and Paste script code in html head.
+Then search for icon you want and copy to html , beside id/class.
+
+Working with Display values
+Html; elements have default value block or inline but they can be overide using CSS display values.
+<div class = "container"></div>
+ display: "block" is the default;
+.container{
+    display: "block";
+    display: "inline";
+}
+
+Span has an "inline" default.
+display: "inline";
+display: "block";
+display: "none";  //html elements go awayand they do not occupy any space.
+visibility: "hidden"; //html elements go away but they still take the space.
+
+
+Display Value - inline Block
+display value: inline-block; can be given height and width unlike inline(span) element.
+
+Html semantic elements; give structure to the html page.
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element#content_sectioning
+<body>
+    <header></header>
+    <main>
+        <aside></aside>
+        <section>
+            <article></article>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+Tip:
+body{
+    margin: 0;
+}
+
+Tip: width can be 50% while height is 450px.
+Tip: for navbar/footer to be stick to the top/bottom and not move
+
+use Position: sticky; and must be paired with a condition top: 0;
+
+
+Postioning Html Elements
+ top: ; right: ; left: ;  bottom: ;
+CSS provides:
+- static; default position value, position elements in normal order on the webpage.
+ position: static;
+
+- relative: position HTML elements relative to their normal position.
+ position: relative;
+ top: ; right: ; left: ;  bottom: ;
+top: moves towards bottom;
+right: moves towards left ==> eg right: 10px; moves 10px away from the right. // right: -60px; moves -60px towards the right.
+can be used in navbar to move inline elements. position: relative; top: -8px;
+
+- absolute: relative to the parent element.
+The parent element needs to have a position other than static or else the absolute element is positioned
+relative to the main Html element.
+(in simpler words the navbar then section inside the main then footer, if the parent(main)does not have 
+position:relative then the article inside section over laps(stays on top) the navbar)
+
+#wrapper(main){
+    position: relative;
+}
+
+#article{
+    position:absolute;
+    top:0;
+}
+
+
+- fixed: self explanatory(stays in the same position even if you scroll the page), not affected by the scroll position of the webpage.
+
+- sticky: combination of position relative and position fixed. It requires a condition ( top: ; right: ; left: ;  bottom: ;)
+and based on this condition it toggles between position relative and fixed.
+requires:  top: ; right: ; left: ;  bottom: ;
+
+Handling Overflows: occurs when content is too big to fit inside the parent element.
+- visible: default value even when the content is bigger than the parent element it is still visible/showing.
+    overflow: visible;
+- hidden: overflowing content is clipper/not shown
+    overflow: hidden;
+    #wrapper{
+        width: 600px;
+        height: 500px;
+        overflow: hidden; //only 600 by 500 is shown.
+    }
+- scroll: when content is overflowing OR when content is NOT overflowing the html element is  STILL made scrollable..
+    overflow: scroll; 
+- auto: when content is overflowing the html element is made scrollable(only when it is overflowing)
+
+Floating HTML elements
+float: ;
+- used for positioning elements.
+image on the left hand side and text on the right.
+float: left;
+can add margin-right: 16px as well.
+
+Box Model
+--------------------------------------------------------------------
+|  margin
+|    
+|    ----------------------------------------------------------
+|    |     border
+|    |
+|    |      -----------------------------------------------
+|    |      |   padding
+|    |      |
+|    |      |     -----------------------------------
+|    |      |     |                                 |
+|    |      |     |              CONTENT            |
+|    |      |     |                                 |
+|    |      |      ----------------------------------
+|    |      |-----------------------------------------------
+|    |
+|    |
+|    |---------------------------------------------------------
+|
+|
+|----------------------------------------------------------------------
+padding: between border and content
+
+adding padding and border to an elements adss to the widith and height of an element,
+so 400px = 446px etc
+
+Box Sizing
+so adding padding can increase size of box; thats where this comes in to keep the box the same size 
+while adding padding;
+
+box-sizing:border-box; 
+==> side-effect: img may become smaller if padding is added and increased.
+
+Adding Shadows
+Text Shadow
+- text-shadow property; requires two values one for the horizontal shadow and the other for vertical shadow.
+third value is for blur(the higher the value the more blurry)
+    text-shadow: 4px 4px 10px gray;
+- multiple shadows: text-shadow: 2px 2px 2px red, 2px 7px 2px green;
+                    text-shadow: horizontal vertical blurry color;
+
+Box Shadow; this property adds a shadow to the html elements box.
+color: blue;
+width:300px;
+height:400px;
+border-radius: 4px;
+background-color: white;
+box-shadow: 0px 4px 4px gray;
+
+CSS Combinators
+Single selectors==>
+html:
+p{
+
+}
+
+id:
+#container{
+
+}
+
+class:
+.button-login{
+
+}
+
+Combine selectors;
+Combinators define relationship between two selectors.
+- Descendant Selector: ''
+- Child Selector: '>'
+- Adjacent Sibling Selector: '+'
+- General Sibling Selector: '~'
+
+- Descendant Selector: ''
+Syntax: selector_a selector_b;
+eg; div p {}; selecting all the paragraphs in the div.
+selects all  the elements matching selector_b which are descendants of  the elements matching selector_a.
+
+- Child Selector: '>'
+Syntax: selector_a > selector_b;
+eg; div > h3 selecting all the paragraphs in the div.
+selects all  the elements matching selector_b which are DIRECT descendants of the elements matching selector_a.
+Example; article p div(p p p) p p ; only the p directly descendant of article will be affected not the p in the div.
+
+- Adjacent Sibling Selector: '+'
+Syntax: selector_a + selector_b;
+eg; div + .menu-items;
+selects the element matching selector_b which is right next to the elements matching selector_a. In another words the adjacent siblings.
+sibling: come after target element.
+
+- General Sibling Selector: '~'
+Syntax: selector_a ~ selector_b;
+eg; div ~ p
+selects all  the elements matching selector_b which are the siblings of the elements matching selector_a.
+selects whats after(p) div, as long as its after div and is p and not wrapped  in another div or span, it is getting selected.
+
+
+Pseudo Classes; used to define a special stage of an element.
+menu:link{
+    color:black;
+}
+.classname:focus
+.classname:disabled{
+    cursor: not-allowed;
+}
+.classname:focus:required{
+    background-color:
+}
+
+.classname:hover
+
+
+general pseudo class
+used with Combinators
+article > p:first-of-type{//only selecting the first one.
+    background-color: pink;
+}
+
+article > p:last-of-type{//selecting the last one.
+    background-color: pink;
+}
+
+article > p:nth-of-type(3){//selecting the third one.
+    background-color: pink;
+}
+
+Pseudo Elements
+- used to style a specific part of an HTML Element.
+::after ==>  used to add some content after the content HTML element. 
+This content could be text, image or blank.
+article > p ::after{
+    content: " ' "; //adding a quote before the paragraph.
+    content: url ('//http:')
+}
+
+::before ==> used to add some content before the content HTML element. 
+This content could be text, image or blank.
+article > p ::after{
+    content: " ' "; //adding a quote after the paragraph.
+}
+
+::first-letter ==>only works with block level elements.(paragraph and heading tags)
+used to add styles to the first letter of some text.
+article > p::first-letter{
+    font-size: 24px
+}
+
+::first-line ==> only works with block level elements.(paragraph and heading tags)
+used to add styles to the first line of some text.
+article > p::first-line{
+    line-spacing: 1.5px
+}
+
+::selection ==> used to add styles to the selected text, it is used to style the text highlight
+(when the mouse is used to highlight some words/text.).
+article > p ::selection{
+    background-color: coral;
+}
