@@ -22,7 +22,7 @@ How to add CSS in HTML?
 - Inline CSS; adding a style property to the HTML element. using the style property (<p style = " "> </>).
 - Internal CSS; adding a style element inside the head of the html page. <head> <style>  </style></head>
 - External CSS; creating a new file index.css, need to link it to the html page using the link element
- (<link href= "/index.css" rel = "stylesheet" type = "text/css") rel = relationship between html doc and 
+ (<link href= "/index.css" rel = "stylesheet" type = "text/css">) rel = relationship between html doc and 
  the external file.
 
 
@@ -142,9 +142,10 @@ Html; elements have default value block or inline but they can be overide using 
 Span has an "inline" default.
 display: "inline";
 display: "block";
-display: "none";  //html elements go awayand they do not occupy any space.
+display: "none";  //html elements go away and they do not occupy any space.
 visibility: "hidden"; //html elements go away but they still take the space.
 
+Block: An element that takes up the full width available and starts on a new line.
 
 Display Value - inline Block
 display value: inline-block; can be given height and width unlike inline(span) element.
@@ -185,6 +186,7 @@ CSS provides:
 top: moves towards bottom;
 right: moves towards left ==> eg right: 10px; moves 10px away from the right. // right: -60px; moves -60px towards the right.
 can be used in navbar to move inline elements. position: relative; top: -8px;
+- top moves it downward (positive value) or upward (negative value) from that position.
 
 - absolute: relative to the parent element.
 The parent element needs to have a position other than static or else the absolute element is positioned
@@ -388,3 +390,290 @@ article > p::first-line{
 article > p ::selection{
     background-color: coral;
 }
+
+Adding Backgrounds to HTML elements
+background-color: blue;
+background-image: url( );
+background-repeat: no-repeat;
+background-size: widith(500px) height(300px);
+background-position: center/top/left/right/bottom/top left/ bottom right;//combination could be used.
+Fullscreen background ==> background-size: contain OR cover;
+Contain; entire height of specified area
+Cover; fills all the space
+
+CSS Gradients
+Linear gradient: the color transition is linear, can go either up, down, left, right, diagonal.
+background: linear-gradient(direction// starting color or first color//ending color  )three values;
+to give it a gradient the use of Backgrounds
+#div{
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to right or 45deg, #f869d5, #56509e)left to right
+}
+Radial-gradient: the color transition is circular..
+background: radial-gradient( #f869d5, #56509e)
+background: radial-gradient(circle at top left//closest-side//closest-corner//farthest-side//farthest-corner,  #f869d5, #56509e)
+
+Handling Text Overflow
+- Stop text from going to the next line ==> (white-space: nowrap;)
+- to handle overflow ==> (overflow: hidden;)
+
+.blog-heading{
+    margin 16px 16px 12px;
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip; OR ellipsis;
+}
+clip;(default) 
+ellipsis;(...)the dots
+
+
+Wrap on the nextline.
+word-break: break-all; OR keep-all; //just breaks the word without care
+
+word-wrap: break-word; //breaks in a meaningful manner
+
+TIP: to center or bring section to the middle of the screen use padding-top:12%
+
+Responsive web design;
+- website should display equally well for all screen sizes from monitors to phones.
+
+Viewport==> part of the webpage that the user can currently see.
+<------------------------------------------------------------------------------------------------------------>
+horizontal length ==> viewport width(vw)
+Entire viewport width: 
+div{
+    width: 100vw;
+}
+40% viewport width:
+div{
+    width: 40vw;
+}
+
+vertical length ==> viewport height(vh)
+div{
+   height: 100vh;
+}
+
+viewport determines how content is scaled and sized when it is rendered on different devices.
+viewport meta tag==> to control the width and scailing of the viewport.
+without this viewport meta tag, mobile devices render pages at desktop screen width, 
+and then scales down the pages to fit the mobil screens.
+right click and inspect website and click on the toogle device  toolbar to see how website will 
+look on a mobile device.
+
+<meta name="viewport" content="width=device-width, initial-scale=1" >
+initial-scale=1(initial zoom level when someone visits the page)
+
+Dynamic width for responsive design
+width: 100%;
+max-width:800px
+min-width:200px//may overflow content is a disadvantage
+
+Media queries==> make it easier to change styles based on the characteristics 
+of the device rendering the content.
+ characteristics: display type, width, height, orientation, resolution.
+ device breakpoints
+@media screen and (max-width: 600px){
+    //styles for device with max width 600px. eg mobile phones
+ }
+@media screen and (min-width: 600px){
+    //styles for device with min width 600px. eg large screen mobiles, ipad in potrait mode.
+ }
+@media screen and (min-width: 768px){
+    //styles for device with width greater than 768px. eg ipad in lanscape mode.
+ }
+@media screen and (min-width: 992px){
+    //styles for device with width greater than 992px. eg desktop/laptop.
+ }
+@media screen and (min-width: 1200px){
+    //styles for device with width greater than 1200px. eg imac.
+ }
+
+TIP: to move something next to eaxh other use display: inline-block;
+use display: inline-block;
+for both items eg for section and aside
+section{
+    display: inline-block;
+    width:65%;
+    margin-right:24px;
+}
+
+aside{
+    display: inline-block;
+    width:25%;
+    vertical-align: top;//using  display:inline-block; allows one to use this property. aside will be top side by side with secction.
+}
+
+.place-wrapper{
+    width: 100%;//100% in 25%
+}
+
+.place-wrapper img {
+    width: 100%;
+}
+
+Flex Layout
+- gives container the ability to alter its items width and height to best fill the available space.
+- flex container expands items to fill available free space, or shrinks them to prevent overflow. 
+This makes it perfect for designing layouts for which the size is unkown or flexible.
+
+Flex container properties
+- display-flex; //direction:row
+- flex-direction: row;  //direction:row
+- flex-direction: row-reverse;  //direction:row aligned on the right, start from the right.
+- flex-direction: column;  //direction:column//stacked on top of each other
+- flex-direction: column-reverse;  //direction:column
+- justify-content: space-between//space-around//flex-start//flex-end//center;
+- flex-wrap: wrap;// overflowing content on next line.
+
+Aligning Flex items
+Property: align-items; used to align items along the cross-axis.
+- display:flex;
+- align-items: stretch//flex-start//flex-end//center;//stretch(default value)
+- flex-direction: column;
+- flex-direction: row;
+TIP: this is being done in the container not (items)tag!!main container.
+
+Property: align-content; used to align items along the cross-axis.
+It only works when flex is wrapped around multiple lines.//NEEDS TO HAVE MULTIPLE ROWS(flex-wrap)
+- display:flex;
+- flex-direction: row;
+- align-content: center//flex-start//flex-end//space-between//space-around//stretch;
+
+
+- align-items:center;
+- justify-content:center;
+
+Flex Item Properties
+Properties used on flex items and not flex containers
+.item{
+    flex-grow: 1;
+}
+.item:nth-child(2){
+    background-color: pink;
+    flex-grow:2;
+}
+
+//flex grow and flex shrink do not work together
+.item:nth-child(2){
+    flex-grow:0;
+    Flex-shrink: 2
+}
+
+- order: -1// rearranges order of child
+
+.item:nth-child(even){
+    background-color: pink;
+}
+
+Flex topbar(navbar)
+right-nav and left-nav
+- on the same line/ next to each other==> display: flex
+- align items in the center ==> align-items: center;
+- for right menu and left menu to be side to side in the nav add ==> display:flex to navbar tag
+nav{
+    display: flex;
+    justify-content:space-between;
+}
+left-nav{
+    display:flex;
+    align-items: center;
+}
+right-nav{
+    display:flex;
+    align-items: center;
+}
+
+Responsive Grid using Flex(decreasing pge size//spliiting screen)
+TIP: wanting 4 cards in a row , chande width of card from width:300px to width:30%
+min-width:200px
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;// to bring to middle/center of screen
+}
+
+
+Transform Properties
+- The transform property allows you to visually manipulate an element by translating, rotating, scailing and skewing.
+- It is used to translate or move elements across x-axis, y-axis and z-axis.
+            transform: translateX(20px)
+        1. x-axis - translateX()   left and right
+        2. y-axis - translateY()   top and bottom
+        3. z-axis - translateZ()
+        right hand side ==> give X a positive value;
+        move top/up ==> give Y a negative value.
+
+shorthand property:  transform: translate(X,Y)
+
+The Rotate Function
+It is used to rotate Html elements along x-axis, y-axis and z-axis.
+         1. x-axis - rotateX()   //45deg// rotating along the x axis.
+         2. y-axis - rotateY()   //rotating along the vertical axis.
+         3. z-axis - rotateZ()   //rotating across the z axis
+
+         transform: scaleX(2)//stretches component horizontally.
+         transform: scaleY(2)
+shorthand property:  transform: scale(1.5,1.5)
+
+transform: skewX(20deg)//tilt elements left and right
+
+Transition property;
+- elements to change values over a specified duration instead of having them occur immediately.
+transition-property: background-color;
+transition-duration: 100ms;
+transition-timing-function: ease-in/ease-out;
+
+Animation property
+@keyframes: what happens at a specific moment.
+0%(start) 100%(end)
+
+div{
+    animation-name:pulse;//keyframe name
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+Shorthand==> animation: pulse 5s;
+
+}
+@keyframes pulse{
+    0%{
+        background-color: pink;
+        transform: rotateZ(0deg);
+    }
+    100%{
+         background-color: yellow; 
+         transform: rotateZ(180deg); 
+    }
+}
+
+
+TIP: to bring something to center use==>
+left:50%;
+transform: translateX(-50%);
+
+//rocket flying
+@keyframes fly{
+    0%{
+    
+        transform: translate(-50%, 0);
+    }
+    100%{
+         transform: translate(-50%, -100vh);
+    }
+}
+
+Grid layouts
+- display: grid;
+- grid-template-columns: auto auto auto auto; // 1 row 4 columns
+- grid-gap: 16px; //space between
+- row-gap: 32px;
+- column-gap:16px;
+
+
