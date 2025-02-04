@@ -580,11 +580,11 @@ nav{
     display: flex;
     justify-content:space-between;
 }
-left-nav{
+#left-nav{
     display:flex;
     align-items: center;
 }
-right-nav{
+#right-nav{
     display:flex;
     align-items: center;
 }
@@ -670,10 +670,297 @@ transform: translateX(-50%);
 }
 
 Grid layouts
+- created to solve layouts problem. It offers a grid-based layout system, with rows amd columns, making it easier to design web pages.
 - display: grid;
 - grid-template-columns: auto auto auto auto; // 1 row 4 columns
-- grid-gap: 16px; //space between
-- row-gap: 32px;
-- column-gap:16px;
+- grid-template-columns: 100px 50px 70px 200px; // 1 row 4 columns
+- grid-gap: 16px 16px; //space between, value for both row & column.
+- row-gap: 32px;//space between rows
+- column-gap:16px;// space between columns 
+- each row line/column line have a position eg row line 1 , row line 2 etc.
 
 
+Grid Container Properties
+<div id = "grid container">
+    <div>
+        <img/>
+    </div>
+</div>
+
+#grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto; // 1 row 4 columns
+    row-gap: 32px;//space between rows
+    column-gap:26px;// space between columns 
+    justify-content: center;
+}
+
+@media (max-width: 900px){
+    #grid-container{
+        grid-template-columns: auto auto auto;
+
+    }
+}
+
+@media (max-width: 400px){
+    #grid-container{
+        grid-template-columns:  auto auto;
+        
+    }
+}
+
+
+Grid Item Properties;
+header
+menu  main  right
+footer
+3 rows and 3 columns
+inside the grid(main) 6 columns and three rows
+
+
+
+<body>
+
+<div id= "grid-container">
+    <div id = "header">Header</div>
+    <div id = "sidebar">Menu</div>
+    <div id = "main">Main</div>
+    <div id = "aside">Right</div>
+    <div id = "footer">Footer</div>
+    </div>
+
+</body>
+
+#header{
+    background-color:green;
+    padding: 24px;
+    grid-area: header;//added to work with//grid-template-areas: '';
+}
+
+#sidebar{
+    background-color:blue;
+    padding: 24px;
+    grid-area: sidebar;//added to work with//grid-template-areas: '';
+}
+...etc
+
+#grid-container{
+    display: grid;
+    grid-template-areas: 'header header header header header header', //to define how many columns are going to come into a row(6 columns)
+                         'sidebar main main main main aside',
+                         'footer footer footer footer footer footer'
+}
+
+@media (max-width: 900px){
+    #grid-container{
+       grid-template-areas: 'header header header header header header', //to define how many columns are going to come into a row(6 columns)
+                            'sidebar main main main main main',
+                            'aside aside aside aside aside aside',
+                            'footer footer footer footer footer footer';
+
+    }
+}
+
+@media (max-width: 400px){
+    #grid-container{
+       grid-template-areas: 'header header header header header header', //to define how many columns are going to come into a row(6 columns)
+                            'sidebar sidebar sidebar sidebar sidebar sidebar'
+                            'main main main main main main',
+                            'aside aside aside aside aside aside',
+                            'footer footer footer footer footer footer';
+
+    }
+}
+
+
+
+1. Need to learn when to use display flex and display:grid!
+
+When to Use Grid vs. Flexbox in CSS
+Use display: flex when:
+You need elements to be in a row or column without complex layout requirements.
+You want items to be evenly spaced or aligned.
+The layout does not require precise row and column control.
+
+display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+
+    
+Use display: grid when:
+You need a two-dimensional layout (both rows & columns).
+You need precise control over column widths, row heights, and placement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CHATGPT HELP!
+I totally get it! CSS has a ton of properties, and it can feel overwhelming at first. Let me break it down in a simple way so you can focus on what actually matters for
+ building a **normal webpage**.  
+
+### **1. Layout Basics: When to Use What?**  
+Think of it like this:  
+
+- **Flexbox (`display: flex`)** → Best for **one-dimensional layouts** (rows or columns). Use it for:  
+  - Centering elements  
+  - Arranging items inside a navbar  
+  - Creating a simple sidebar layout  
+
+- **Grid (`display: grid`)** → Best for **two-dimensional layouts** (both rows & columns). Use it for:  
+  - Complex page layouts (e.g., a full webpage with a sidebar + content)  
+  - Laying out a gallery or card-based design  
+
+- **Absolute Positioning (`position: absolute`)** → Use **only when necessary**, like:  
+  - Positioning dropdowns, tooltips, or overlays  
+  - Moving elements relative to their parent (`position: relative` on parent required)  
+
+### **2. How to Center Things (Easiest Ways)**  
+You don’t need to remember every method! Use the one that fits:  
+
+- **Center Horizontally (inline elements like text, links, etc.)**  
+  ```css
+  text-align: center;
+  ```
+  
+- **Center a Block (`div`, `section`, etc.) Horizontally**  
+  ```css
+  margin: 0 auto;
+  width: 50%; /* or any width */
+  ```
+  
+- **Perfect Centering (Both Horizontally & Vertically, Best Way)**  
+  ```css
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* or parent height */
+  ```
+  
+- **Another way using `position` (less recommended, but works)**  
+  ```css
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  ```
+
+### **3. Basic Webpage Structure (What You Need)**
+Here’s a simple HTML + CSS structure for a standard webpage:  
+
+#### **HTML (Structure)**  
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li class="dropdown">
+          <a href="#">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">SEO</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome to My Website</h1>
+    <p>This is the main content area.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 My Website</p>
+  </footer>
+
+</body>
+</html>
+```
+
+#### **CSS (Styling & Layout)**  
+```css
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  background: #333;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Main content */
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 10px;
+}
+```
